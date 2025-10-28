@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public class AuthorRepository {
 
-    private List<Author> authors = new ArrayList<>(Arrays.asList(
+    private final List<Author> authors = new ArrayList<>(Arrays.asList(
             new Author("A1", "Mihai Eminescu"),
             new Author("A2", "Ion Creanga"),
             new Author("A3", "J. K. Rowling"),
@@ -28,14 +28,6 @@ public class AuthorRepository {
     }
 
     public Author save(Author author) {
-        if (author.getId() == null) {
-            int maxId = authors.stream()
-                    .mapToInt(a -> Integer.parseInt(a.getId().substring(1)))
-                    .max()
-                    .orElse(0);
-            author.setId("A" + (maxId + 1));
-        }
-
         authors.removeIf(a -> a.getId().equals(author.getId()));
         authors.add(author);
         return author;
@@ -44,5 +36,4 @@ public class AuthorRepository {
     public boolean deleteById(String id) {
         return authors.removeIf(a -> a.getId().equals(id));
     }
-
 }

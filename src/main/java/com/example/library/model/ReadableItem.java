@@ -5,9 +5,9 @@ public class ReadableItem {
     private String id;
     private String publicationId;
     private String barcode;
-    private String status;
+    private ReadableItemStatus status;
 
-    public ReadableItem(String id, String publicationId, String barcode, String status) {
+    public ReadableItem(String id, String publicationId, String barcode, ReadableItemStatus status) {
         this.id = id;
         this.publicationId = publicationId;
         this.barcode = barcode;
@@ -38,11 +38,11 @@ public class ReadableItem {
         this.barcode = barcode;
     }
 
-    public String getStatus() {
+    public ReadableItemStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(ReadableItemStatus status) {
         this.status = status;
     }
 

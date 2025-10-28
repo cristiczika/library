@@ -1,17 +1,15 @@
 package com.example.library.model;
 
-import java.util.List;
-
 public class MagazineDetails extends Publication {
 
     private String publisher;
 
-    public MagazineDetails(String id, String title, List<ReadableItem> copies, String publisher) {
-        super(id, title, copies);
+    public MagazineDetails(String id, String title, String publisher) {
+        super(id, title);
         this.publisher = publisher;
     }
 
-    String getPublisher() {
+    public String getPublisher() {
         return publisher;
     }
 

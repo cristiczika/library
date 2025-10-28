@@ -13,7 +13,7 @@ public abstract class Publication {
         this.copies = new ArrayList<>();
     }
 
-    public Publication(String id, String title, List<ReadableItem> copies) {
+    public Publication(String id, String title) {
         this();
         this.id = id;
         this.title = title;

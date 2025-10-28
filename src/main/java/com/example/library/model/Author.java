@@ -44,7 +44,7 @@ public class Author {
     }
 
     public void addBook(BookDetails book) {
-        if (book == null) {
+        if (books == null) {
             books = new ArrayList<>();
         }
 

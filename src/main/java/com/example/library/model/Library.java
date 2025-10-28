@@ -46,7 +46,7 @@ public class Library {
     }
 
     public void addMember(Member member) {
-        if (member == null) {
+        if (members == null) {
             members = new ArrayList<>();
         }
 

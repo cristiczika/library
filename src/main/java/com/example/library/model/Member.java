@@ -16,7 +16,7 @@ public class Member {
         this.loans = new ArrayList<>();
     }
 
-    public Member(String id, String name, String libraryId, List<Reservation> reservations, List<Loan> loans) {
+    public Member(String id, String name, String libraryId) {
         this();
         this.id = id;
         this.name = name;

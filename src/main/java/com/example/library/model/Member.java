@@ -1,20 +1,26 @@
 package com.example.library.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
+
     private String id;
     private String name;
     private String libraryId;
     private List<Reservation> reservations;
-    private List<Loan>loans;
+    private List<Loan> loans;
+
+    public Member() {
+        this.reservations = new ArrayList<>();
+        this.loans = new ArrayList<>();
+    }
 
     public Member(String id, String name, String libraryId, List<Reservation> reservations, List<Loan> loans) {
+        this();
         this.id = id;
         this.name = name;
         this.libraryId = libraryId;
-        this.reservations = reservations;
-        this.loans = loans;
     }
 
     public String getId() {
@@ -49,12 +55,28 @@ public class Member {
         this.reservations = reservations;
     }
 
+    public void addReservation(Reservation reservation) {
+        if (reservations == null) {
+            reservations = new ArrayList<>();
+        }
+
+        reservations.add(reservation);
+    }
+
     public List<Loan> getLoans() {
         return loans;
     }
 
     public void setLoans(List<Loan> loans) {
         this.loans = loans;
+    }
+
+    public void addLoan(Loan loan) {
+        if (loans == null) {
+            loans = new ArrayList<>();
+        }
+
+        loans.add(loan);
     }
 
 }

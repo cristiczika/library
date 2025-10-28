@@ -15,8 +15,8 @@ public class MagazineDetails extends Publication {
         return publisher;
     }
 
-
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
 }

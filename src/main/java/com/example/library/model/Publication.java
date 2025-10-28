@@ -1,5 +1,6 @@
 package com.example.library.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Publication {
@@ -8,10 +9,14 @@ public abstract class Publication {
     private String title;
     private List<ReadableItem> copies;
 
+    public Publication() {
+        this.copies = new ArrayList<>();
+    }
+
     public Publication(String id, String title, List<ReadableItem> copies) {
+        this();
         this.id = id;
         this.title = title;
-        this.copies = copies;
     }
 
     public String getId() {
@@ -36,6 +41,14 @@ public abstract class Publication {
 
     public void setCopies(List<ReadableItem> copies) {
         this.copies = copies;
+    }
+
+    public void addCopy(ReadableItem copy) {
+        if (copies == null) {
+            copies = new ArrayList<>();
+        }
+
+        copies.add(copy);
     }
 
 }

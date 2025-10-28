@@ -7,12 +7,16 @@ public class Author {
 
     private String id;
     private String name;
-    private List<String> books;
+    private List<BookDetails> books;
+
+    public Author() {
+        this.books = new ArrayList<>();
+    }
 
     public Author(String id, String name) {
+        this();
         this.id = id;
         this.name = name;
-        this.books = new ArrayList<>();
     }
 
     public String getId() {
@@ -31,12 +35,19 @@ public class Author {
         this.name = name;
     }
 
-    public List<String> getBooks() {
+    public List<BookDetails> getBooks() {
         return books;
     }
 
-    public void addBook(String book) {
-        books.add(book);
+    public void setBooks(List<BookDetails> books) {
+        this.books = books;
     }
 
+    public void addBook(BookDetails book) {
+        if (book == null) {
+            books = new ArrayList<>();
+        }
+
+        books.add(book);
+    }
 }

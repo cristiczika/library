@@ -12,7 +12,7 @@ import java.util.Optional;
 public class LibraryRepository {
 
     private final List<Library> libraries = new ArrayList<>(Arrays.asList(
-            new Library("L1", "Central City Library")
+            new Library("L1", "Librarie Centru")
     ));
 
     public List<Library> findAll() {

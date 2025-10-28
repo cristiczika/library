@@ -1,6 +1,7 @@
 package com.example.library.repository;
 
 import com.example.library.model.ReadableItem;
+import com.example.library.model.ReadableItemStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -12,11 +13,11 @@ import java.util.Optional;
 public class ReadableItemRepository {
 
     private final List<ReadableItem> items = new ArrayList<>(Arrays.asList(
-            new ReadableItem("R1", "B1", "BC101", "Available"),
-            new ReadableItem("R2", "B2", "BC102", "Available"),
-            new ReadableItem("R3", "B3", "BC103", "Borrowed"),
-            new ReadableItem("R4", "B4", "BC104", "Available"),
-            new ReadableItem("R5", "M1", "BC105", "Reserved")
+            new ReadableItem("R1", "B1", "BC101", ReadableItemStatus.AVAILABLE),
+            new ReadableItem("R2", "B2", "BC102", ReadableItemStatus.AVAILABLE),
+            new ReadableItem("R3", "B3", "BC103", ReadableItemStatus.BORROWED),
+            new ReadableItem("R4", "B4", "BC104", ReadableItemStatus.AVAILABLE),
+            new ReadableItem("R5", "M1", "BC105", ReadableItemStatus.RESERVED)
     ));
 
     public List<ReadableItem> findAll() {

@@ -1,6 +1,7 @@
 package com.example.library.repository;
 
 import com.example.library.model.Reservation;
+import com.example.library.model.ReservationStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -12,8 +13,8 @@ import java.util.Optional;
 public class ReservationRepository {
 
     private final List<Reservation> reservations = new ArrayList<>(Arrays.asList(
-            new Reservation("RS1", "M1", "R5", "2025-10-25", "Active"),
-            new Reservation("RS2", "M2", "R3", "2025-10-26", "Completed")
+            new Reservation("RS1", "M1", "R5", "2025-10-25", ReservationStatus.ACTIVE),
+            new Reservation("RS2", "M2", "R3", "2025-10-26", ReservationStatus.COMPLETED)
     ));
 
     public List<Reservation> findAll() {

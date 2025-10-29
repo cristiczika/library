@@ -7,6 +7,7 @@ public class Library {
 
     private String id;
     private String name;
+    private String address;
     private List<Member> members;
     private List<ReadableItem> readableItems;
 
@@ -15,10 +16,11 @@ public class Library {
         this.readableItems = new ArrayList<>();
     }
 
-    public Library(String id, String name) {
+    public Library(String id, String name, String address) {
         this();
         this.id = id;
         this.name = name;
+        this.address = address;
     }
 
     public String getId() {
@@ -35,6 +37,14 @@ public class Library {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public List<Member> getMembers() {

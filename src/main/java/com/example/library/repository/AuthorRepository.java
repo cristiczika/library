@@ -12,11 +12,11 @@ import java.util.Optional;
 public class AuthorRepository {
 
     private final List<Author> authors = new ArrayList<>(Arrays.asList(
-            new Author("A1", "Mihai Eminescu"),
-            new Author("A2", "Ion Creanga"),
-            new Author("A3", "J. K. Rowling"),
-            new Author("A4", "Liviu Rebreanu"),
-            new Author("A5", "Camil Petrescu")
+            new Author("A1", "Mihai Eminescu", 1850),
+            new Author("A2", "Ion Creanga", 1837),
+            new Author("A3", "J. K. Rowling", 1965),
+            new Author("A4", "Liviu Rebreanu", 1885),
+            new Author("A5", "Camil Petrescu", 1894)
     ));
 
     public List<Author> findAll() {

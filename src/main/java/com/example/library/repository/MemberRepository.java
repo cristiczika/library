@@ -12,9 +12,9 @@ import java.util.Optional;
 public class MemberRepository {
 
     private final List<Member> members = new ArrayList<>(Arrays.asList(
-            new Member("M1", "Ana Popescu", "L1"),
-            new Member("M2", "George Ionescu", "L1"),
-            new Member("M3", "Maria Dobre", "L1")
+            new Member("M1", "Ana Popescu", "ana.popescu@gmail.com", "L1"),
+            new Member("M2", "George Ionescu", "georgei@yahoo.com", "L1"),
+            new Member("M3", "Maria Dobre", "maria_dobre@gmail.com", "L1")
     ));
 
     public List<Member> findAll() {

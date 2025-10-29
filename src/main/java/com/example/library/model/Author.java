@@ -7,16 +7,18 @@ public class Author {
 
     private String id;
     private String name;
+    private int birthYear;
     private List<BookDetails> books;
 
     public Author() {
         this.books = new ArrayList<>();
     }
 
-    public Author(String id, String name) {
+    public Author(String id, String name, int birthYear) {
         this();
         this.id = id;
         this.name = name;
+        this.birthYear = birthYear;
     }
 
     public String getId() {
@@ -33,6 +35,14 @@ public class Author {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
+    }
+
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
     }
 
     public List<BookDetails> getBooks() {

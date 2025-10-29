@@ -1,24 +1,34 @@
 package com.example.library.controller;
 
-import com.example.library.model.*;
-import com.example.library.service.*;
+import com.example.library.model.Author;
+import com.example.library.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/library")
-public class LibrarySystemController {
+public class LibraryController {
 
-    private final LibraryService libraryService;
+    private final AuthorService authorService;
+
+    @Autowired
+    public LibraryController(AuthorService authorService) {
+        this.authorService = authorService;
+    }
+
+    @GetMapping("/authors")
+    public List<Author> getAllAuthors() {
+        return authorService.getAllAuthors();
+    }
+
+    /*private final LibraryService2 libraryService;
     private final PeopleService peopleService;
     private final TransactionService transactionService;
     private final AdminService adminService;
 
     @Autowired
-    public LibrarySystemController(LibraryService libraryService,
+    public LibrarySystemController(LibraryService2 libraryService,
                                    PeopleService peopleService,
                                    TransactionService transactionService,
                                    AdminService adminService) {
@@ -146,5 +156,5 @@ public class LibrarySystemController {
     @PostMapping("/branches")
     public Library addLibrary(@RequestBody Library library) {
         return adminService.addLibrary(library);
-    }
+    }*/
 }

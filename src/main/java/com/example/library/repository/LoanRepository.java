@@ -10,13 +10,13 @@ import org.springframework.stereotype.Repository;
 public class LoanRepository extends InMemoryRepository<Loan> {
 
     @Override
-    protected String getId(Loan author) {
-        return author.getId();
+    protected String getId(Loan loan) {
+        return loan.getId();
     }
 
     @Override
-    protected void setId(Loan author, String id) {
-        author.setId(id);
+    protected void setId(Loan loan, String id) {
+        loan.setId(id);
     }
 
 }

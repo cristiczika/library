@@ -7,13 +7,13 @@ import org.springframework.stereotype.Repository;
 public class ReservationRepository extends InMemoryRepository<Reservation> {
 
     @Override
-    protected String getId(Reservation author) {
-        return author.getId();
+    protected String getId(Reservation reservation) {
+        return reservation.getId();
     }
 
     @Override
-    protected void setId(Reservation author, String id) {
-        author.setId(id);
+    protected void setId(Reservation reservation, String id) {
+        reservation.setId(id);
     }
 
 }

@@ -7,13 +7,13 @@ import org.springframework.stereotype.Repository;
 public class MagazineDetailsRepository extends InMemoryRepository<MagazineDetails> {
 
     @Override
-    protected String getId(MagazineDetails author) {
-        return author.getId();
+    protected String getId(MagazineDetails magazineDetails) {
+        return magazineDetails.getId();
     }
 
     @Override
-    protected void setId(MagazineDetails author, String id) {
-        author.setId(id);
+    protected void setId(MagazineDetails magazineDetails, String id) {
+        magazineDetails.setId(id);
     }
 
 }

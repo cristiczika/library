@@ -7,13 +7,13 @@ import org.springframework.stereotype.Repository;
 public class BookAuthorRepository extends InMemoryRepository<BookAuthor> {
 
     @Override
-    protected String getId(BookAuthor author) {
-        return author.getId();
+    protected String getId(BookAuthor bookAuthor) {
+        return bookAuthor.getId();
     }
 
     @Override
-    protected void setId(BookAuthor author, String id) {
-        author.setId(id);
+    protected void setId(BookAuthor bookAuthor, String id) {
+        bookAuthor.setId(id);
     }
 
 }

@@ -9,13 +9,13 @@ import org.springframework.stereotype.Repository;
 public class LibraryRepository extends InMemoryRepository<Library> {
 
     @Override
-    protected String getId(Library author) {
-        return author.getId();
+    protected String getId(Library library) {
+        return library.getId();
     }
 
     @Override
-    protected void setId(Library author, String id) {
-        author.setId(id);
+    protected void setId(Library library, String id) {
+        library.setId(id);
     }
 
 }

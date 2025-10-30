@@ -1,5 +1,6 @@
 package com.example.library.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,18 +8,18 @@ public class Author {
 
     private String id;
     private String name;
-    private int birthYear;
+    private LocalDate dateOfBirth;
     private List<BookDetails> books;
 
     public Author() {
         this.books = new ArrayList<>();
     }
 
-    public Author(String id, String name, int birthYear) {
+    public Author(String id, String name, LocalDate dateOfBirth) {
         this();
         this.id = id;
         this.name = name;
-        this.birthYear = birthYear;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getId() {
@@ -37,12 +38,12 @@ public class Author {
         this.name = name;
     }
 
-    public int getBirthYear() {
-        return birthYear;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setBirthYear(int birthYear) {
-        this.birthYear = birthYear;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public List<BookDetails> getBooks() {

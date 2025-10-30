@@ -1,5 +1,6 @@
 package com.example.library.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ public class Loan {
 
     private String id;
     private String memberId;
-    private String date;
+    private LocalDate date;
     private List<Reservation> reservations;
     private List<ReadableItem> items;
 
@@ -16,7 +17,7 @@ public class Loan {
         this.items = new ArrayList<>();
     }
 
-    public Loan(String id, String memberId, String date) {
+    public Loan(String id, String memberId, LocalDate date) {
         this();
         this.id = id;
         this.memberId = memberId;
@@ -39,11 +40,11 @@ public class Loan {
         this.memberId = memberId;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

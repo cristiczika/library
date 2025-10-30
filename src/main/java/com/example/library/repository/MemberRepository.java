@@ -1,37 +1,19 @@
 package com.example.library.repository;
 
-import com.example.library.model.Member;
+import com.example.library.model.*;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-
 @Repository
-public class MemberRepository {
+public class MemberRepository extends InMemoryRepository<Member> {
 
-    private final List<Member> members = new ArrayList<>(Arrays.asList(
-            new Member("M1", "Ana Popescu", "ana.popescu@gmail.com", "L1"),
-            new Member("M2", "George Ionescu", "georgei@yahoo.com", "L1"),
-            new Member("M3", "Maria Dobre", "maria_dobre@gmail.com", "L1")
-    ));
-
-    public List<Member> findAll() {
-        return members;
+    @Override
+    protected String getId(Member author) {
+        return author.getId();
     }
 
-    public Optional<Member> findById(String id) {
-        return members.stream().filter(m -> m.getId().equals(id)).findFirst();
+    @Override
+    protected void setId(Member author, String id) {
+        author.setId(id);
     }
 
-    public Member save(Member member) {
-        members.removeIf(m -> m.getId().equals(member.getId()));
-        members.add(member);
-        return member;
-    }
-
-    public boolean deleteById(String id) {
-        return members.removeIf(m -> m.getId().equals(id));
-    }
 }

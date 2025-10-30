@@ -1,37 +1,19 @@
 package com.example.library.repository;
 
-import com.example.library.model.MagazineDetails;
+import com.example.library.model.*;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-
 @Repository
-public class MagazineDetailsRepository {
+public class MagazineDetailsRepository extends InMemoryRepository<MagazineDetails> {
 
-    private final List<MagazineDetails> magazines = new ArrayList<>(Arrays.asList(
-            new MagazineDetails("M1", "National Geographic", "NatGeo"),
-            new MagazineDetails("M2", "Science Weekly", "The Guardian"),
-            new MagazineDetails("M3", "Time Magazine", "Time Inc.")
-    ));
-
-    public List<MagazineDetails> findAll() {
-        return magazines;
+    @Override
+    protected String getId(MagazineDetails author) {
+        return author.getId();
     }
 
-    public Optional<MagazineDetails> findById(String id) {
-        return magazines.stream().filter(m -> m.getId().equals(id)).findFirst();
+    @Override
+    protected void setId(MagazineDetails author, String id) {
+        author.setId(id);
     }
 
-    public MagazineDetails save(MagazineDetails magazine) {
-        magazines.removeIf(m -> m.getId().equals(magazine.getId()));
-        magazines.add(magazine);
-        return magazine;
-    }
-
-    public boolean deleteById(String id) {
-        return magazines.removeIf(m -> m.getId().equals(id));
-    }
 }

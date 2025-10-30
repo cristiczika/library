@@ -5,7 +5,6 @@ import com.example.library.repository.MagazineDetailsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MagazineDetailsService {
@@ -16,15 +15,18 @@ public class MagazineDetailsService {
         this.magazineDetailsRepository = magazineDetailsRepository;
     }
 
-    public MagazineDetails addMagazineDetails(MagazineDetails magazineDetails) {
-        return magazineDetailsRepository.save(magazineDetails);
+    public void addMagazineDetails(MagazineDetails magazineDetails) {
+        magazineDetailsRepository.save(magazineDetails);
     }
 
-    public boolean removeMagazineDetails(String magazineDetailsId) {
-        return magazineDetailsRepository.deleteById(magazineDetailsId);
+    public void removeMagazineDetails(String magazineDetailsId) {
+        MagazineDetails magazineDetails = magazineDetailsRepository.findById(magazineDetailsId);
+        if (magazineDetails != null) {
+            magazineDetailsRepository.delete(magazineDetails);
+        }
     }
 
-    public Optional<MagazineDetails> getMagazineDetailsById(String magazineDetailsId) {
+    public MagazineDetails getMagazineDetailsById(String magazineDetailsId) {
         return magazineDetailsRepository.findById(magazineDetailsId);
     }
 

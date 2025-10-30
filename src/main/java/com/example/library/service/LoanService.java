@@ -1,5 +1,6 @@
 package com.example.library.service;
 
+import com.example.library.model.Library;
 import com.example.library.model.Loan;
 import com.example.library.repository.LoanRepository;
 import org.springframework.stereotype.Service;
@@ -16,15 +17,18 @@ public class LoanService {
         this.loanRepository = loanRepository;
     }
 
-    public Loan addLoan(Loan loan) {
-        return loanRepository.save(loan);
+    public void addLoan(Loan loan) {
+        loanRepository.save(loan);
     }
 
-    public boolean removeLoan(String loanId) {
-        return loanRepository.deleteById(loanId);
+    public void removeLoan(String loanId) {
+        Loan loan = loanRepository.findById(loanId);
+        if (loan != null) {
+            loanRepository.delete(loan);
+        }
     }
 
-    public Optional<Loan> getLoanById(String loanId) {
+    public Loan getLoanById(String loanId) {
         return loanRepository.findById(loanId);
     }
 

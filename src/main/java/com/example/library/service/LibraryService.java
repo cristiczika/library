@@ -5,7 +5,6 @@ import com.example.library.repository.LibraryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class LibraryService {
@@ -16,15 +15,18 @@ public class LibraryService {
         this.libraryRepository = libraryRepository;
     }
 
-    public Library addLibrary(Library library) {
-        return libraryRepository.save(library);
+    public void addLibrary(Library library) {
+        libraryRepository.save(library);
     }
 
-    public boolean removeLibrary(String libraryId) {
-        return libraryRepository.deleteById(libraryId);
+    public void removeLibrary(String libraryId) {
+        Library library = libraryRepository.findById(libraryId);
+        if (library != null) {
+            libraryRepository.delete(library);
+        }
     }
 
-    public Optional<Library> getLibraryById(String libraryId) {
+    public Library getLibraryById(String libraryId) {
         return libraryRepository.findById(libraryId);
     }
 

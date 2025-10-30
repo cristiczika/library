@@ -5,7 +5,6 @@ import com.example.library.repository.ReadableItemRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ReadableItemService {
@@ -16,15 +15,18 @@ public class ReadableItemService {
         this.readableItemRepository = readableItemRepository;
     }
 
-    public ReadableItem addReadableItem(ReadableItem readableItem) {
-        return readableItemRepository.save(readableItem);
+    public void addReadableItem(ReadableItem readableItem) {
+        readableItemRepository.save(readableItem);
     }
 
-    public boolean removeReadableItem(String readableItemId) {
-        return readableItemRepository.deleteById(readableItemId);
+    public void removeReadableItem(String readableItemId) {
+        ReadableItem readableItem = readableItemRepository.findById(readableItemId);
+        if (readableItem != null) {
+            readableItemRepository.delete(readableItem);
+        }
     }
 
-    public Optional<ReadableItem> getReadableItemById(String readableItemId) {
+    public ReadableItem getReadableItemById(String readableItemId) {
         return readableItemRepository.findById(readableItemId);
     }
 

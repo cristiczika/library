@@ -5,7 +5,6 @@ import com.example.library.repository.MemberRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MemberService {
@@ -16,15 +15,18 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public Member addMember(Member member) {
-        return memberRepository.save(member);
+    public void addMember(Member member) {
+        memberRepository.save(member);
     }
 
-    public boolean removeMember(String memberId) {
-        return memberRepository.deleteById(memberId);
+    public void removeMember(String memberId) {
+        Member member = memberRepository.findById(memberId);
+        if (member != null) {
+            memberRepository.delete(member);
+        }
     }
 
-    public Optional<Member> getMemberById(String memberId) {
+    public Member getMemberById(String memberId) {
         return memberRepository.findById(memberId);
     }
 

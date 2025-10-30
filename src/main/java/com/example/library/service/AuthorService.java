@@ -5,7 +5,6 @@ import com.example.library.repository.AuthorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AuthorService {
@@ -16,15 +15,18 @@ public class AuthorService {
         this.authorRepository = authorRepository;
     }
 
-    public Author addAuthor(Author author) {
-        return authorRepository.save(author);
+    public void addAuthor(Author author) {
+        authorRepository.save(author);
     }
 
-    public boolean removeAuthor(String authorId) {
-        return authorRepository.deleteById(authorId);
+    public void removeAuthor(String authorId) {
+        Author author = authorRepository.findById(authorId);
+        if (author != null) {
+            authorRepository.delete(author);
+        }
     }
 
-    public Optional<Author> getAuthorById(String authorId) {
+    public Author getAuthorById(String authorId) {
         return authorRepository.findById(authorId);
     }
 

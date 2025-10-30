@@ -1,5 +1,6 @@
 package com.example.library.service;
 
+import com.example.library.model.ReadableItem;
 import com.example.library.model.Reservation;
 import com.example.library.repository.ReservationRepository;
 import org.springframework.stereotype.Service;
@@ -16,15 +17,18 @@ public class ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
-    public Reservation addReservation(Reservation reservation) {
-        return reservationRepository.save(reservation);
+    public void addReservation(Reservation reservation) {
+        reservationRepository.save(reservation);
     }
 
-    public boolean removeReservation(String reservationId) {
-        return reservationRepository.deleteById(reservationId);
+    public void removeReservation(String reservationId) {
+        Reservation reservation = reservationRepository.findById(reservationId);
+        if (reservation != null) {
+            reservationRepository.delete(reservation);
+        }
     }
 
-    public Optional<Reservation> getReservationById(String reservationId) {
+    public Reservation getReservationById(String reservationId) {
         return reservationRepository.findById(reservationId);
     }
 

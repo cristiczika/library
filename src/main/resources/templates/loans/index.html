@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Loans</title></head>
+<body>
+<h1>Loans</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th><th>Member Id</th><th>Date</th><th>Action</th>
+    </tr>
+    <tr th:each="a : ${loans}">
+        <td th:text="${a.id}"></td>
+        <td th:text="${a.memberId}"></td>
+        <td th:text="${a.date}"></td>
+        <td>
+            <form th:action="@{'/loans/' + ${a.id} + '/delete'}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+
+<br>
+<a href="/loans/new">Add New Loan</a>
+</html>

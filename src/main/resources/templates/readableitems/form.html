@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Add Readable Item</title></head>
+<body>
+<h1>Add Readable Item</h1>
+
+<form action="#" th:action="@{/readableitems}" th:object="${readableitem}" method="post">
+    <label>Id: <input type="text" th:field="*{id}" /></label><br/>
+    <br/>
+    <label>Publication Id: <input type="text" th:field="*{publicationId}" /></label><br/>
+    <br/>
+    <label>Barcode: <input type="text" th:field="*{barcode}" /></label><br/>
+    <br/>
+    <label>Status:
+        <select th:field="*{status}">
+            <option th:each="s : ${T(com.example.library.model.ReadableItemStatus).values()}"
+                    th:value="${s}"
+                    th:text="${s}">
+            </option>
+        </select>
+    </label><br/>
+    <button type="submit">Save</button>
+    <br/>
+</form>
+
+<br/>
+<a href="/readableitems">Back</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Add Magazine Details</title></head>
+<body>
+<h1>Add Magazine Details</h1>
+
+<form action="#" th:action="@{/magazinedetails}" th:object="${magazinedetail}" method="post">
+    <label>Id: <input type="text" th:field="*{id}" /></label><br/>
+    <br/>
+    <label>Title: <input type="text" th:field="*{title}" /></label><br/>
+    <br/>
+    <label>Publisher: <input type="text" th:field="*{publisher}" /></label><br/>
+    <br/>
+    <button type="submit">Save</button>
+    <br/>
+</form>
+
+<br/>
+<a href="/magazinedetails">Back</a>
+</body>
+</html>

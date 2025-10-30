@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Add Loan</title></head>
+<body>
+<h1>Add Loan</h1>
+
+<form action="#" th:action="@{/loans}" th:object="${loan}" method="post">
+    <label>Id: <input type="text" th:field="*{id}" /></label><br/>
+    <br/>
+    <label>Member Id: <input type="text" th:field="*{memberId}" /></label><br/>
+    <br/>
+    <label>Date: <input type="date" th:field="*{date}" /></label><br/>
+    <br/>
+    <button type="submit">Save</button>
+    <br/>
+</form>
+
+<br/>
+<a href="/loans">Back</a>
+</body>
+</html>

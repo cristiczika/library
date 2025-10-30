@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Magazine Details</title></head>
+<body>
+<h1>Magazine Details</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th><th>Title</th><th>Publisher</th><th>Action</th>
+    </tr>
+    <tr th:each="a : ${magazinedetails}">
+        <td th:text="${a.id}"></td>
+        <td th:text="${a.title}"></td>
+        <td th:text="${a.publisher}"></td>
+        <td>
+            <form th:action="@{'/magazinedetails/' + ${a.id} + '/delete'}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+
+<br>
+<a href="/magazinedetails/new">Add New Magazine Details</a>
+</html>

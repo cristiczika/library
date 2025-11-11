@@ -1,13 +1,14 @@
 package com.example.library.repository;
 
-import com.example.library.model.BookAuthor;
-import com.example.library.model.BookDetails;
-import com.example.library.model.Library;
-import com.example.library.model.Loan;
+import com.example.library.model.*;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class LoanRepository extends InMemoryRepository<Loan> {
+public class LoanRepository extends InFileRepository<Loan> {
+
+    public LoanRepository() {
+        super(Loan.class, "loans.json", "src/main/resources/data");
+    }
 
     @Override
     protected String getId(Loan loan) {

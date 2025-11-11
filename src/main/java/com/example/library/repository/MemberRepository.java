@@ -4,7 +4,11 @@ import com.example.library.model.*;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class MemberRepository extends InMemoryRepository<Member> {
+public class MemberRepository extends InFileRepository<Member> {
+
+    public MemberRepository() {
+        super(Member.class, "members.json", "src/main/resources/data");
+    }
 
     @Override
     protected String getId(Member member) {

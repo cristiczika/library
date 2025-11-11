@@ -1,0 +1,62 @@
+[
+  {
+    "memberId": "M1",
+    "name": "Ana Popescu",
+    "email": "ana.popescu@gmail.com",
+    "libraryId": "L1"
+  },
+  {
+    "memberId": "M2",
+    "name": "George Ionescu",
+    "email": "georgei@yahoo.com",
+    "libraryId": "L1"
+  },
+  {
+    "memberId": "M3",
+    "name": "Maria Dobre",
+    "email": "maria_dobre@gmail.com",
+    "libraryId": "L1"
+  },
+  {
+    "memberId": "M4",
+    "name": "Ion Vasilescu",
+    "email": "ion1234@gmail.com",
+    "libraryId": "L2"
+  },
+  {
+    "memberId": "M5",
+    "name": "Elena Marinescu",
+    "email": "elenamarinescu@yahoo.com",
+    "libraryId": "L2"
+  },
+  {
+    "memberId": "M6",
+    "name": "Cristian Radu",
+    "email": "cristianradu2004@gmail.com",
+    "libraryId": "L4"
+  },
+  {
+    "memberId": "M7",
+    "name": "Adriana Stan",
+    "email": "adrianastan@gmail.com",
+    "libraryId": "L5"
+  },
+  {
+    "memberId": "M8",
+    "name": "Mihai Petrescu",
+    "email": "mihaipetrescu09@gmail.com",
+    "libraryId": "L1"
+  },
+  {
+    "memberId": "M9",
+    "name": "Raluca Georgescu",
+    "email": "ralucageorgescu@yahoo.com",
+    "libraryId": "L1"
+  },
+  {
+    "memberId": "M10",
+    "name": "Alina Dumitrescu",
+    "email": "alinadumitrescu@yahoo.com",
+    "libraryId": "L5"
+  }
+]

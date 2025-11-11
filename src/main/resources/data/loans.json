@@ -1,0 +1,52 @@
+[
+  {
+    "loanId": "LN1",
+    "memberId": "M1",
+    "loanDate": "2025-10-20"
+  },
+  {
+    "loanId": "LN2",
+    "memberId": "M2",
+    "loanDate": "2025-10-21"
+  },
+  {
+    "loanId": "LN3",
+    "memberId": "M3",
+    "loanDate": "2025-10-22"
+  },
+  {
+    "loanId": "LN4",
+    "memberId": "M1",
+    "loanDate": "2025-10-23"
+  },
+  {
+    "loanId": "LN5",
+    "memberId": "M2",
+    "loanDate": "2025-10-24"
+  },
+  {
+    "loanId": "LN6",
+    "memberId": "M3",
+    "loanDate": "2025-10-25"
+  },
+  {
+    "loanId": "LN7",
+    "memberId": "M1",
+    "loanDate": "2025-10-26"
+  },
+  {
+    "loanId": "LN8",
+    "memberId": "M2",
+    "loanDate": "2025-10-27"
+  },
+  {
+    "loanId": "LN9",
+    "memberId": "M3",
+    "loanDate": "2025-10-28"
+  },
+  {
+    "loanId": "LN10",
+    "memberId": "M1",
+    "loanDate": "2025-10-29"
+  }
+]

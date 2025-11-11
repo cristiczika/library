@@ -1,0 +1,52 @@
+[
+  {
+    "libraryId": "L1",
+    "name": "Librarie Centru",
+    "address": "Strada Napoca 23"
+  },
+  {
+    "libraryId": "L2",
+    "name": "Librarie Marasti",
+    "address": "Strada Fabricii 55"
+  },
+  {
+    "libraryId": "L3",
+    "name": "Librarie Hasdeu",
+    "address": "Strada Hasdeu 19"
+  },
+  {
+    "libraryId": "L4",
+    "name": "Librarie Bucuresti Pipera",
+    "address": "Strada Pipera 15"
+  },
+  {
+    "libraryId": "L5",
+    "name": "Librarie Timisoara",
+    "address": "Strada Unirii 27"
+  },
+  {
+    "libraryId": "L6",
+    "name": "Librarie Sibiu",
+    "address": "Strada George Cosbuc 60"
+  },
+  {
+    "libraryId": "L7",
+    "name": "Librarie Sibiu Centru",
+    "address": "Strada 9 Mai 10"
+  },
+  {
+    "libraryId": "L8",
+    "name": "Librarie Brasov",
+    "address": "Strada Republicii 5"
+  },
+  {
+    "libraryId": "L9",
+    "name": "Librarie Constanta",
+    "address": "Strada Mamaia 42"
+  },
+  {
+    "libraryId": "L10",
+    "name": "Librarie Iasi",
+    "address": "Strada Stefan cel Mare 33"
+  }
+]

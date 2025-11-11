@@ -4,7 +4,11 @@ import com.example.library.model.Author;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AuthorRepository extends InMemoryRepository<Author> {
+public class AuthorRepository extends InFileRepository<Author> {
+
+    public AuthorRepository() {
+        super(Author.class, "authors.json", "src/main/resources/data");
+    }
 
     @Override
     protected String getId(Author author) {
@@ -15,5 +19,4 @@ public class AuthorRepository extends InMemoryRepository<Author> {
     protected void setId(Author author, String id) {
         author.setId(id);
     }
-
 }

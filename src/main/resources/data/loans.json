@@ -1,52 +1,52 @@
 [
   {
-    "loanId": "LN1",
+    "id": "LN1",
     "memberId": "M1",
-    "loanDate": "2025-10-20"
+    "date": "2025-10-20"
   },
   {
-    "loanId": "LN2",
+    "id": "LN2",
     "memberId": "M2",
-    "loanDate": "2025-10-21"
+    "date": "2025-10-21"
   },
   {
-    "loanId": "LN3",
+    "id": "LN3",
     "memberId": "M3",
-    "loanDate": "2025-10-22"
+    "date": "2025-10-22"
   },
   {
-    "loanId": "LN4",
+    "id": "LN4",
     "memberId": "M1",
-    "loanDate": "2025-10-23"
+    "date": "2025-10-23"
   },
   {
-    "loanId": "LN5",
+    "id": "LN5",
     "memberId": "M2",
-    "loanDate": "2025-10-24"
+    "date": "2025-10-24"
   },
   {
-    "loanId": "LN6",
+    "id": "LN6",
     "memberId": "M3",
-    "loanDate": "2025-10-25"
+    "date": "2025-10-25"
   },
   {
-    "loanId": "LN7",
+    "id": "LN7",
     "memberId": "M1",
-    "loanDate": "2025-10-26"
+    "date": "2025-10-26"
   },
   {
-    "loanId": "LN8",
+    "id": "LN8",
     "memberId": "M2",
-    "loanDate": "2025-10-27"
+    "date": "2025-10-27"
   },
   {
-    "loanId": "LN9",
+    "id": "LN9",
     "memberId": "M3",
-    "loanDate": "2025-10-28"
+    "date": "2025-10-28"
   },
   {
-    "loanId": "LN10",
+    "id": "LN10",
     "memberId": "M1",
-    "loanDate": "2025-10-29"
+    "date": "2025-10-29"
   }
 ]

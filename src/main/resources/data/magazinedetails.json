@@ -1,51 +1,51 @@
 [
   {
-    "magazineId": "M1",
+    "id": "M1",
     "title": "National Geographic",
     "publisher": "NatGeo"
   },
   {
-    "magazineId": "M2",
+    "id": "M2",
     "title": "Science Weekly",
     "publisher": "The Guardian"
   },
   {
-    "magazineId": "M3",
+    "id": "M3",
     "title": "Time Magazine",
     "publisher": "Time Inc."
   },
   {
-    "magazineId": "M4",
+    "id": "M4",
     "title": "Forbes",
     "publisher": "Forbes Media"
   },
   {
-    "magazineId": "M5",
+    "id": "M5",
     "title": "The Economist",
     "publisher": "The Economist Group"
   },
   {
-    "magazineId": "M6",
+    "id": "M6",
     "title": "Wired",
     "publisher": "Condé Nast"
   },
   {
-    "magazineId": "M7",
+    "id": "M7",
     "title": "Vogue",
     "publisher": "Condé Nast"
   },
   {
-    "magazineId": "M8",
+    "id": "M8",
     "title": "Popular Science",
     "publisher": "Bonnier Corporation"
   },
   {
-    "magazineId": "M9",
+    "id": "M9",
     "title": "Scientific American",
     "publisher": "Springer Nature"
   },
   {
-    "magazineId": "M10",
+    "id": "M10",
     "title": "Harvard Business Review",
     "publisher": "Harvard Business Publishing"
   }

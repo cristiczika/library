@@ -7,6 +7,8 @@ public class BookDetails extends Publication {
 
     private List<BookAuthor> bookAuthors;
 
+    public BookDetails() {}
+
     public BookDetails(String id, String title) {
         super(id, title);
         this.bookAuthors = new ArrayList<>();

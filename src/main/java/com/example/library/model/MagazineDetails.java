@@ -4,6 +4,8 @@ public class MagazineDetails extends Publication {
 
     private String publisher;
 
+    public MagazineDetails() {}
+
     public MagazineDetails(String id, String title, String publisher) {
         super(id, title);
         this.publisher = publisher;

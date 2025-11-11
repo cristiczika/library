@@ -1,42 +1,42 @@
 [
   {
-    "bookId": "B1",
+    "id": "B1",
     "title": "Poezii"
   },
   {
-    "bookId": "B2",
+    "id": "B2",
     "title": "Amintiri din Copilarie"
   },
   {
-    "bookId": "B3",
+    "id": "B3",
     "title": "Harry Potter and the Sorcerer's Stone"
   },
   {
-    "bookId": "B4",
+    "id": "B4",
     "title": "Ion"
   },
   {
-    "bookId": "B5",
+    "id": "B5",
     "title": "Patul lui Procust"
   },
   {
-    "bookId": "B6",
+    "id": "B6",
     "title": "Mandrie si Prejudecata"
   },
   {
-    "bookId": "B7",
+    "id": "B7",
     "title": "Cadavrul Viu"
   },
   {
-    "bookId": "B8",
+    "id": "B8",
     "title": "Purple Hibiscus"
   },
   {
-    "bookId": "B9",
+    "id": "B9",
     "title": "Metamorfoza"
   },
   {
-    "bookId": "B10",
+    "id": "B10",
     "title": "The Handmaid's Tale"
   }
 ]

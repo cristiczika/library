@@ -1,61 +1,61 @@
 [
   {
-    "readableItemId": "R1",
-    "itemId": "B1",
+    "id": "R1",
+    "publicationId": "B1",
     "barcode": "BC101",
     "status": "AVAILABLE"
   },
   {
-    "readableItemId": "R2",
-    "itemId": "B2",
+    "id": "R2",
+    "publicationId": "B2",
     "barcode": "BC102",
     "status": "AVAILABLE"
   },
   {
-    "readableItemId": "R3",
-    "itemId": "B3",
+    "id": "R3",
+    "publicationId": "B3",
     "barcode": "BC103",
     "status": "BORROWED"
   },
   {
-    "readableItemId": "R4",
-    "itemId": "B4",
+    "id": "R4",
+    "publicationId": "B4",
     "barcode": "BC104",
     "status": "AVAILABLE"
   },
   {
-    "readableItemId": "R5",
-    "itemId": "M1",
+    "id": "R5",
+    "publicationId": "M1",
     "barcode": "BC105",
     "status": "RESERVED"
   },
   {
-    "readableItemId": "R6",
-    "itemId": "M2",
+    "id": "R6",
+    "publicationId": "M2",
     "barcode": "BC106",
     "status": "AVAILABLE"
   },
   {
-    "readableItemId": "R7",
-    "itemId": "M3",
+    "id": "R7",
+    "publicationId": "M3",
     "barcode": "BC107",
     "status": "BORROWED"
   },
   {
-    "readableItemId": "R8",
-    "itemId": "M4",
+    "id": "R8",
+    "publicationId": "M4",
     "barcode": "BC108",
     "status": "AVAILABLE"
   },
   {
-    "readableItemId": "R9",
-    "itemId": "D1",
+    "id": "R9",
+    "publicationId": "D1",
     "barcode": "BC109",
     "status": "AVAILABLE"
   },
   {
-    "readableItemId": "R10",
-    "itemId": "D2",
+    "id": "R10",
+    "publicationId": "D2",
     "barcode": "BC110",
     "status": "RESERVED"
   }

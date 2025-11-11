@@ -1,72 +1,72 @@
 [
   {
-    "reservationId": "RS1",
+    "id": "RS1",
     "memberId": "M1",
     "readableItemId": "R5",
-    "reservationDate": "2025-10-25",
+    "date": "2025-10-25",
     "status": "ACTIVE"
   },
   {
-    "reservationId": "RS2",
+    "id": "RS2",
     "memberId": "M2",
     "readableItemId": "R3",
-    "reservationDate": "2025-10-26",
+    "date": "2025-10-26",
     "status": "COMPLETED"
   },
   {
-    "reservationId": "RS3",
+    "id": "RS3",
     "memberId": "M3",
     "readableItemId": "R1",
-    "reservationDate": "2025-10-27",
+    "date": "2025-10-27",
     "status": "CANCELLED"
   },
   {
-    "reservationId": "RS4",
+    "id": "RS4",
     "memberId": "M4",
     "readableItemId": "R2",
-    "reservationDate": "2025-10-28",
+    "date": "2025-10-28",
     "status": "ACTIVE"
   },
   {
-    "reservationId": "RS5",
+    "id": "RS5",
     "memberId": "M5",
     "readableItemId": "R4",
-    "reservationDate": "2025-10-29",
+    "date": "2025-10-29",
     "status": "COMPLETED"
   },
   {
-    "reservationId": "RS6",
+    "id": "RS6",
     "memberId": "M1",
     "readableItemId": "R6",
-    "reservationDate": "2025-10-30",
+    "date": "2025-10-30",
     "status": "ACTIVE"
   },
   {
-    "reservationId": "RS7",
+    "id": "RS7",
     "memberId": "M2",
     "readableItemId": "R7",
-    "reservationDate": "2025-10-31",
+    "date": "2025-10-31",
     "status": "CANCELLED"
   },
   {
-    "reservationId": "RS8",
+    "id": "RS8",
     "memberId": "M3",
     "readableItemId": "R8",
-    "reservationDate": "2025-11-01",
+    "date": "2025-11-01",
     "status": "ACTIVE"
   },
   {
-    "reservationId": "RS9",
+    "id": "RS9",
     "memberId": "M4",
     "readableItemId": "R9",
-    "reservationDate": "2025-11-02",
+    "date": "2025-11-02",
     "status": "COMPLETED"
   },
   {
-    "reservationId": "RS10",
+    "id": "RS10",
     "memberId": "M5",
     "readableItemId": "R10",
-    "reservationDate": "2025-11-03",
+    "date": "2025-11-03",
     "status": "ACTIVE"
   }
 ]

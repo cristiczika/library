@@ -8,6 +8,8 @@ public class Reservation {
     private String date;
     private ReservationStatus status;
 
+    public Reservation() {}
+
     public Reservation(String id, String memberId, String readableItemId, String date, ReservationStatus status) {
         this.id = id;
         this.memberId = memberId;

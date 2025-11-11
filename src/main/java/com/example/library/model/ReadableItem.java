@@ -7,6 +7,8 @@ public class ReadableItem {
     private String barcode;
     private ReadableItemStatus status;
 
+    public ReadableItem() {}
+
     public ReadableItem(String id, String publicationId, String barcode, ReadableItemStatus status) {
         this.id = id;
         this.publicationId = publicationId;

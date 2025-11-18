@@ -1,52 +1,51 @@
-[
-  {
-    "id": "M1",
-    "title": "National Geographic",
-    "publisher": "NatGeo"
-  },
-  {
-    "id": "M2",
-    "title": "Science Weekly",
-    "publisher": "The Guardian"
-  },
-  {
-    "id": "M3",
-    "title": "Time Magazine",
-    "publisher": "Time Inc."
-  },
-  {
-    "id": "M4",
-    "title": "Forbes",
-    "publisher": "Forbes Media"
-  },
-  {
-    "id": "M5",
-    "title": "The Economist",
-    "publisher": "The Economist Group"
-  },
-  {
-    "id": "M6",
-    "title": "Wired",
-    "publisher": "Condé Nast"
-  },
-  {
-    "id": "M7",
-    "title": "Vogue",
-    "publisher": "Condé Nast"
-  },
-  {
-    "id": "M8",
-    "title": "Popular Science",
-    "publisher": "Bonnier Corporation"
-  },
-  {
-    "id": "M9",
-    "title": "Scientific American",
-    "publisher": "Springer Nature"
-  },
-  {
-    "id": "M10",
-    "title": "Harvard Business Review",
-    "publisher": "Harvard Business Publishing"
-  }
-]
+[ {
+  "id" : "M1",
+  "title" : "National Geographic",
+  "copies" : [ ],
+  "publisher" : "NatGeo"
+}, {
+  "id" : "M2",
+  "title" : "Science Weekly",
+  "copies" : [ ],
+  "publisher" : "The Guardian"
+}, {
+  "id" : "M3",
+  "title" : "Time Magazine",
+  "copies" : [ ],
+  "publisher" : "Time Inc."
+}, {
+  "id" : "M4",
+  "title" : "Forbes",
+  "copies" : [ ],
+  "publisher" : "Forbes Media"
+}, {
+  "id" : "M5",
+  "title" : "The Economist",
+  "copies" : [ ],
+  "publisher" : "The Economist Group"
+}, {
+  "id" : "M6",
+  "title" : "Wired",
+  "copies" : [ ],
+  "publisher" : "Condé Nast"
+}, {
+  "id" : "M7",
+  "title" : "Vogue",
+  "copies" : [ ],
+  "publisher" : "Condé Nast"
+}, {
+  "id" : "M8",
+  "title" : "Popular Science",
+  "copies" : [ ],
+  "publisher" : "Bonnier Corporation"
+}, {
+  "id" : "M9",
+  "title" : "Scientific American",
+  "copies" : [ ],
+  "publisher" : "Springer Nature"
+}, {
+  "id" : "M10",
+  "title" : "Harvard Business Review",
+  "copies" : [ ],
+  "publisher" : "Harvard Business Publishing"
+} ]

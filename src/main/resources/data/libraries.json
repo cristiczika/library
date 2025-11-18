@@ -1,52 +1,61 @@
-[
-  {
-    "id": "L1",
-    "name": "Librarie Centru",
-    "address": "Strada Napoca 23"
-  },
-  {
-    "id": "L2",
-    "name": "Librarie Marasti",
-    "address": "Strada Fabricii 55"
-  },
-  {
-    "id": "L3",
-    "name": "Librarie Hasdeu",
-    "address": "Strada Hasdeu 19"
-  },
-  {
-    "id": "L4",
-    "name": "Librarie Bucuresti Pipera",
-    "address": "Strada Pipera 15"
-  },
-  {
-    "id": "L5",
-    "name": "Librarie Timisoara",
-    "address": "Strada Unirii 27"
-  },
-  {
-    "id": "L6",
-    "name": "Librarie Sibiu",
-    "address": "Strada George Cosbuc 60"
-  },
-  {
-    "id": "L7",
-    "name": "Librarie Sibiu Centru",
-    "address": "Strada 9 Mai 10"
-  },
-  {
-    "id": "L8",
-    "name": "Librarie Brasov",
-    "address": "Strada Republicii 5"
-  },
-  {
-    "id": "L9",
-    "name": "Librarie Constanta",
-    "address": "Strada Mamaia 42"
-  },
-  {
-    "id": "L10",
-    "name": "Librarie Iasi",
-    "address": "Strada Stefan cel Mare 33"
-  }
-]
+[ {
+  "id" : "L1",
+  "name" : "Librarie Centru",
+  "address" : "Strada Napoca 23",
+  "members" : [ ],
+  "readableItems" : [ ]
+}, {
+  "id" : "L2",
+  "name" : "Librarie Marasti",
+  "address" : "Strada Fabricii 55",
+  "members" : [ ],
+  "readableItems" : [ ]
+}, {
+  "id" : "L3",
+  "name" : "Librarie Hasdeu",
+  "address" : "Strada Hasdeu 19",
+  "members" : [ ],
+  "readableItems" : [ ]
+}, {
+  "id" : "L4",
+  "name" : "Librarie Bucuresti Pipera",
+  "address" : "Strada Pipera 15",
+  "members" : [ ],
+  "readableItems" : [ ]
+}, {
+  "id" : "L5",
+  "name" : "Librarie Timisoara",
+  "address" : "Strada Unirii 27",
+  "members" : [ ],
+  "readableItems" : [ ]
+}, {
+  "id" : "L6",
+  "name" : "Librarie Sibiu",
+  "address" : "Strada George Cosbuc 60",
+  "members" : [ ],
+  "readableItems" : [ ]
+}, {
+  "id" : "L7",
+  "name" : "Librarie Sibiu Centru",
+  "address" : "Strada 9 Mai 10",
+  "members" : [ ],
+  "readableItems" : [ ]
+}, {
+  "id" : "L8",
+  "name" : "Librarie Brasov",
+  "address" : "Strada Republicii 5",
+  "members" : [ ],
+  "readableItems" : [ ]
+}, {
+  "id" : "L9",
+  "name" : "Librarie Constanta",
+  "address" : "Strada Mamaia 42",
+  "members" : [ ],
+  "readableItems" : [ ]
+}, {
+  "id" : "L10",
+  "name" : "Librarie Iasi",
+  "address" : "Strada Stefan cel Mare 33",
+  "members" : [ ],
+  "readableItems" : [ ]
+} ]

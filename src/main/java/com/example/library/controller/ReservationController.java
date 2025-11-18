@@ -17,15 +17,35 @@ public class ReservationController {
         this.reservationService = reservationService;
     }
 
+    /*
+    getAll si getById
+     */
     @GetMapping
     public String getAllReservations(Model model) {
         model.addAttribute("reservations", reservationService.getAllReservations());
         return "reservations/index";
     }
 
+    @GetMapping("/{id}")
+    public String getReservationById(@PathVariable String id, Model model) {
+        Reservation reservation = reservationService.getReservationById(id);
+        if (reservation == null) {
+            return "redirect:/reservations";
+        }
+
+        model.addAttribute("reservation", reservation);
+        model.addAttribute("statuses", ReservationStatus.values());
+        return "reservations/details";
+    }
+
+
+    /*
+    addReservation
+     */
     @GetMapping("/new")
     public String showAddForm(Model model) {
         model.addAttribute("reservation", new Reservation("", "", "", "", ReservationStatus.ACTIVE));
+        model.addAttribute("statuses", ReservationStatus.values());
         return "reservations/form";
     }
 
@@ -35,6 +55,32 @@ public class ReservationController {
         return "redirect:/reservations";
     }
 
+
+    /*
+    updateReservation
+     */
+    @GetMapping("/{id}/edit")
+    public String showEditForm(@PathVariable String id, Model model) {
+        Reservation reservation = reservationService.getReservationById(id);
+        if (reservation == null) {
+            return "redirect:/reservations";
+        }
+
+        model.addAttribute("reservation", reservation);
+        model.addAttribute("statuses", ReservationStatus.values());
+        return "reservations/form";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateReservation(@PathVariable String id, @ModelAttribute Reservation updated) {
+        reservationService.updateReservation(id, updated);
+        return "redirect:/reservations";
+    }
+
+
+    /*
+    deleteReservation
+     */
     @PostMapping("/{id}/delete")
     public String deleteReservation(@PathVariable String id) {
         reservationService.removeReservation(id);

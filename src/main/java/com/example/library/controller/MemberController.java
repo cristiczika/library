@@ -16,12 +16,30 @@ public class MemberController {
         this.memberService = memberService;
     }
 
+    /*
+    getAll si getById
+     */
     @GetMapping
-    public String getAllMember(Model model) {
+    public String getAllMembers(Model model) {
         model.addAttribute("members", memberService.getAllMembers());
         return "members/index";
     }
 
+    @GetMapping("/{id}")
+    public String getMemberById(@PathVariable String id, Model model) {
+        Member member = memberService.getMemberById(id);
+        if (member == null) {
+            return "redirect:/members";
+        }
+
+        model.addAttribute("member", member);
+        return "members/details";
+    }
+
+
+    /*
+    addMember
+     */
     @GetMapping("/new")
     public String showAddForm(Model model) {
         model.addAttribute("member", new Member("", "", "", ""));
@@ -34,6 +52,31 @@ public class MemberController {
         return "redirect:/members";
     }
 
+
+    /*
+    updateMember
+     */
+    @GetMapping("/{id}/edit")
+    public String showEditForm(@PathVariable String id, Model model) {
+        Member member = memberService.getMemberById(id);
+        if (member == null) {
+            return "redirect:/members";
+        }
+
+        model.addAttribute("member", member);
+        return "members/form";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateMember(@PathVariable String id, @ModelAttribute Member updatedMember) {
+        memberService.updateMember(id, updatedMember);
+        return "redirect:/members";
+    }
+
+
+    /*
+    deleteMember
+     */
     @PostMapping("/{id}/delete")
     public String deleteMember(@PathVariable String id) {
         memberService.removeMember(id);

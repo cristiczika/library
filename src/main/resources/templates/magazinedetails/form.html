@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Add Magazine Details</title></head>
+<head><title>Magazine Details Form</title></head>
 <body>
-<h1>Add Magazine Details</h1>
 
-<form action="#" th:action="@{/magazinedetails}" th:object="${magazinedetail}" method="post">
-    <label>Id: <input type="text" th:field="*{id}" /></label><br/>
-    <br/>
-    <label>Title: <input type="text" th:field="*{title}" /></label><br/>
-    <br/>
-    <label>Publisher: <input type="text" th:field="*{publisher}" /></label><br/>
-    <br/>
+<h1 th:text="${magazinedetail.id} == '' ? 'Add Magazine Details' : 'Edit Magazine Details'"></h1>
+
+<!-- add -->
+<form th:if="${magazinedetail.id} == ''"
+      th:action="@{/magazinedetails}"
+      th:object="${magazinedetail}"
+      method="post">
+
+    <label>Id:</label><br/>
+    <input type="text" th:field="*{id}" /> <br/><br/>
+
+    <label>Title:</label><br/>
+    <input type="text" th:field="*{title}" required/><br/><br/>
+
+    <label>Publisher:</label><br/>
+    <input type="text" th:field="*{publisher}" required/><br/><br/>
+
     <button type="submit">Save</button>
-    <br/>
 </form>
+
+
+<!-- edit -->
+<form th:unless="${magazinedetail.id} == ''"
+      th:action="@{'/magazinedetails/' + ${magazinedetail.id} + '/edit'}"
+      th:object="${magazinedetail}"
+      method="post">
+
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Title:</label><br/>
+    <input type="text" th:field="*{title}" required/><br/><br/>
+
+    <label>Publisher:</label><br/>
+    <input type="text" th:field="*{publisher}" required/><br/><br/>
+
+    <button type="submit">Save</button>
+</form>
+
 
 <br/>
 <a href="/magazinedetails">Back</a>
+
 </body>
 </html>

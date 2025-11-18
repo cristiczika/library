@@ -1,62 +1,51 @@
-[
-  {
-    "id": "R1",
-    "publicationId": "B1",
-    "barcode": "BC101",
-    "status": "AVAILABLE"
-  },
-  {
-    "id": "R2",
-    "publicationId": "B2",
-    "barcode": "BC102",
-    "status": "AVAILABLE"
-  },
-  {
-    "id": "R3",
-    "publicationId": "B3",
-    "barcode": "BC103",
-    "status": "BORROWED"
-  },
-  {
-    "id": "R4",
-    "publicationId": "B4",
-    "barcode": "BC104",
-    "status": "AVAILABLE"
-  },
-  {
-    "id": "R5",
-    "publicationId": "M1",
-    "barcode": "BC105",
-    "status": "RESERVED"
-  },
-  {
-    "id": "R6",
-    "publicationId": "M2",
-    "barcode": "BC106",
-    "status": "AVAILABLE"
-  },
-  {
-    "id": "R7",
-    "publicationId": "M3",
-    "barcode": "BC107",
-    "status": "BORROWED"
-  },
-  {
-    "id": "R8",
-    "publicationId": "M4",
-    "barcode": "BC108",
-    "status": "AVAILABLE"
-  },
-  {
-    "id": "R9",
-    "publicationId": "D1",
-    "barcode": "BC109",
-    "status": "AVAILABLE"
-  },
-  {
-    "id": "R10",
-    "publicationId": "D2",
-    "barcode": "BC110",
-    "status": "RESERVED"
-  }
-]
+[ {
+  "id" : "R1",
+  "publicationId" : "B1",
+  "barcode" : "BC101",
+  "status" : "AVAILABLE"
+}, {
+  "id" : "R2",
+  "publicationId" : "B2",
+  "barcode" : "BC102",
+  "status" : "AVAILABLE"
+}, {
+  "id" : "R3",
+  "publicationId" : "B3",
+  "barcode" : "BC103",
+  "status" : "BORROWED"
+}, {
+  "id" : "R4",
+  "publicationId" : "B4",
+  "barcode" : "BC104",
+  "status" : "AVAILABLE"
+}, {
+  "id" : "R5",
+  "publicationId" : "M1",
+  "barcode" : "BC105",
+  "status" : "RESERVED"
+}, {
+  "id" : "R6",
+  "publicationId" : "M2",
+  "barcode" : "BC106",
+  "status" : "AVAILABLE"
+}, {
+  "id" : "R7",
+  "publicationId" : "M3",
+  "barcode" : "BC107",
+  "status" : "BORROWED"
+}, {
+  "id" : "R8",
+  "publicationId" : "M4",
+  "barcode" : "BC108",
+  "status" : "AVAILABLE"
+}, {
+  "id" : "R9",
+  "publicationId" : "D1",
+  "barcode" : "BC109",
+  "status" : "AVAILABLE"
+}, {
+  "id" : "R10",
+  "publicationId" : "D2",
+  "barcode" : "BC110",
+  "status" : "RESERVED"
+} ]

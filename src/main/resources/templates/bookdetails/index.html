@@ -6,20 +6,32 @@
 
 <table border="1">
     <tr>
-        <th>ID</th><th>Title</th><th>Action</th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Action</th>
     </tr>
-    <tr th:each="a : ${bookdetails}">
-        <td th:text="${a.id}"></td>
-        <td th:text="${a.title}"></td>
+
+    <tr th:each="bd : ${bookdetails}">
+        <td th:text="${bd.id}"></td>
+        <td th:text="${bd.title}"></td>
+
         <td>
-            <form th:action="@{'/bookdetails/' + ${a.id} + '/delete'}" method="post">
+            <a th:href="@{'/bookdetails/' + ${bd.id}}">Details</a>
+            &nbsp;&nbsp;
+            <a th:href="@{'/bookdetails/' + ${bd.id} + '/edit'}">Edit</a>
+            &nbsp;&nbsp;
+
+            <form th:action="@{'/bookdetails/' + ${bd.id} + '/delete'}"
+                  method="post"
+                  style="display:inline;">
                 <button type="submit">Delete</button>
             </form>
         </td>
     </tr>
 </table>
-</body>
 
-<br>
+<br/>
 <a href="/bookdetails/new">Add New Book Details</a>
+
+</body>
 </html>

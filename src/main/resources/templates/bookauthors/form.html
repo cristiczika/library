@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Add Book Author</title></head>
+<head>
+    <title>Book Author Form</title>
+</head>
 <body>
-<h1>Add Book Author</h1>
 
-<form action="#" th:action="@{/bookauthors}" th:object="${bookauthor}" method="post">
-    <label>Id: <input type="text" th:field="*{id}" /></label><br/>
-    <br/>
-    <label>Book Id: <input type="text" th:field="*{bookId}" /></label><br/>
-    <br/>
-    <label>Author Id: <input type="text" th:field="*{authorId}" /></label><br/>
-    <br/>
+<h1 th:text="${bookauthor.id} == '' ? 'Add Book Author' : 'Edit Book Author'"></h1>
+
+<!-- add -->
+<form th:if="${bookauthor.id} == ''" th:action="@{/bookauthors}" th:object="${bookauthor}" method="post">
+
+    <label>Id:</label><br/>
+    <input type="text" th:field="*{id}" /> <br/><br/>
+
+    <label>Book Id:</label><br/>
+    <input type="text" th:field="*{bookId}" required/><br/><br/>
+
+    <label>Author Id:</label><br/>
+    <input type="text" th:field="*{authorId}" required/><br/><br/>
+
     <button type="submit">Save</button>
-    <br/>
+</form>
+
+<!-- edit -->
+<form th:unless="${bookauthor.id} == ''"
+      th:action="@{'/bookauthors/' + ${bookauthor.id} + '/edit'}"
+      th:object="${bookauthor}"
+      method="post">
+
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Book Id:</label><br/>
+    <input type="text" th:field="*{bookId}" required/><br/><br/>
+
+    <label>Author Id:</label><br/>
+    <input type="text" th:field="*{authorId}" required/><br/><br/>
+
+    <button type="submit">Save</button>
 </form>
 
 <br/>
 <a href="/bookauthors">Back</a>
+
 </body>
 </html>

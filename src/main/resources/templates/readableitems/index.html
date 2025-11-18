@@ -2,26 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head><title>Readable Items</title></head>
 <body>
+
 <h1>Readable Items</h1>
 
 <table border="1">
     <tr>
-        <th>ID</th><th>Publication Id</th><th>Barcode</th><th>Status</th><th>Action</th>
+        <th>ID</th>
+        <th>Publication Id</th>
+        <th>Barcode</th>
+        <th>Status</th>
+        <th>Actions</th>
     </tr>
-    <tr th:each="a : ${readableitems}">
-        <td th:text="${a.id}"></td>
-        <td th:text="${a.publicationId}"></td>
-        <td th:text="${a.barcode}"></td>
-        <td th:text="${a.status}"></td>
+
+    <tr th:each="ri : ${readableitems}">
+        <td th:text="${ri.id}"></td>
+        <td th:text="${ri.publicationId}"></td>
+        <td th:text="${ri.barcode}"></td>
+        <td th:text="${ri.status}"></td>
+
         <td>
-            <form th:action="@{'/readableitems/' + ${a.id} + '/delete'}" method="post">
+            <a th:href="@{'/readableitems/' + ${ri.id}}">Details</a>
+            &nbsp;&nbsp;
+            <a th:href="@{'/readableitems/' + ${ri.id} + '/edit'}">Edit</a>
+            &nbsp;&nbsp;
+
+            <form th:action="@{'/readableitems/' + ${ri.id} + '/delete'}"
+                  method="post"
+                  style="display:inline;">
                 <button type="submit">Delete</button>
             </form>
         </td>
     </tr>
 </table>
-</body>
 
-<br>
+<br/>
 <a href="/readableitems/new">Add New Readable Item</a>
+
+</body>
 </html>

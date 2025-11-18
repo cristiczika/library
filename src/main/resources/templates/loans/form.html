@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Add Loan</title></head>
+<head><title>Loan Form</title></head>
 <body>
-<h1>Add Loan</h1>
 
-<form action="#" th:action="@{/loans}" th:object="${loan}" method="post">
-    <label>Id: <input type="text" th:field="*{id}" /></label><br/>
-    <br/>
-    <label>Member Id: <input type="text" th:field="*{memberId}" /></label><br/>
-    <br/>
-    <label>Date: <input type="date" th:field="*{date}" /></label><br/>
-    <br/>
+<h1 th:text="${loan.id} == '' ? 'Add Loan' : 'Edit Loan'"></h1>
+
+<!-- add -->
+<form th:if="${loan.id} == ''"
+      th:action="@{/loans}"
+      th:object="${loan}"
+      method="post">
+
+    <label>Id:</label><br/>
+    <input type="text" th:field="*{id}" /> <br/><br/>
+
+    <label>Member Id:</label><br/>
+    <input type="text" th:field="*{memberId}" required/><br/><br/>
+
+    <label>Date:</label><br/>
+    <input type="date" th:field="*{date}" required/><br/><br/>
+
     <button type="submit">Save</button>
-    <br/>
+</form>
+
+<!-- edit -->
+<form th:unless="${loan.id} == ''"
+      th:action="@{'/loans/' + ${loan.id} + '/edit'}"
+      th:object="${loan}"
+      method="post">
+
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Member Id:</label><br/>
+    <input type="text" th:field="*{memberId}" required/><br/><br/>
+
+    <label>Date:</label><br/>
+    <input type="date" th:field="*{date}" required/><br/><br/>
+
+    <button type="submit">Save</button>
 </form>
 
 <br/>
 <a href="/loans">Back</a>
+
 </body>
 </html>

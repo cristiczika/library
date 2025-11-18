@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Readable Item Details</title></head>
+<body>
+
+<h1>Readable Item Details</h1>
+
+<p><strong>ID:</strong> <span th:text="${readableitem.id}"></span></p>
+<p><strong>Publication Id:</strong> <span th:text="${readableitem.publicationId}"></span></p>
+<p><strong>Barcode:</strong> <span th:text="${readableitem.barcode}"></span></p>
+<p><strong>Status:</strong> <span th:text="${readableitem.status}"></span></p>
+
+<br/>
+
+<a th:href="@{'/readableitems/' + ${readableitem.id} + '/edit'}">Edit</a>
+<br/><br/>
+<a href="/readableitems">Back</a>
+
+</body>
+</html>

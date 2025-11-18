@@ -16,12 +16,30 @@ public class MagazineDetailsController {
         this.magazineDetailsService = magazineDetailsService;
     }
 
+    /*
+    getAll si getById
+    */
     @GetMapping
     public String getAllMagazineDetails(Model model) {
         model.addAttribute("magazinedetails", magazineDetailsService.getAllMagazineDetails());
         return "magazinedetails/index";
     }
 
+    @GetMapping("/{id}")
+    public String getMagazineDetailsById(@PathVariable String id, Model model) {
+        MagazineDetails magazineDetails = magazineDetailsService.getMagazineDetailsById(id);
+        if (magazineDetails == null) {
+            return "redirect:/magazinedetails";
+        }
+
+        model.addAttribute("magazinedetail", magazineDetails);
+        return "magazinedetails/details";
+    }
+
+
+    /*
+    addMagazineDetails
+    */
     @GetMapping("/new")
     public String showAddForm(Model model) {
         model.addAttribute("magazinedetail", new MagazineDetails("", "", ""));
@@ -34,6 +52,31 @@ public class MagazineDetailsController {
         return "redirect:/magazinedetails";
     }
 
+
+    /*
+    updateMagazineDetails
+    */
+    @GetMapping("/{id}/edit")
+    public String showEditForm(@PathVariable String id, Model model) {
+        MagazineDetails magazineDetails = magazineDetailsService.getMagazineDetailsById(id);
+        if (magazineDetails == null) {
+            return "redirect:/magazinedetails";
+        }
+
+        model.addAttribute("magazinedetail", magazineDetails);
+        return "magazinedetails/form";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateMagazineDetails(@PathVariable String id, @ModelAttribute MagazineDetails updated) {
+        magazineDetailsService.updateMagazineDetails(id, updated);
+        return "redirect:/magazinedetails";
+    }
+
+
+    /*
+    deleteMagazineDetails
+    */
     @PostMapping("/{id}/delete")
     public String deleteMagazineDetails(@PathVariable String id) {
         magazineDetailsService.removeMagazineDetails(id);

@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Add Readable Item</title></head>
+<head><title>Readable Item Form</title></head>
 <body>
-<h1>Add Readable Item</h1>
 
-<form action="#" th:action="@{/readableitems}" th:object="${readableitem}" method="post">
-    <label>Id: <input type="text" th:field="*{id}" /></label><br/>
-    <br/>
-    <label>Publication Id: <input type="text" th:field="*{publicationId}" /></label><br/>
-    <br/>
-    <label>Barcode: <input type="text" th:field="*{barcode}" /></label><br/>
-    <br/>
-    <label>Status:
-        <select th:field="*{status}">
-            <option th:each="s : ${T(com.example.library.model.ReadableItemStatus).values()}"
-                    th:value="${s}"
-                    th:text="${s}">
-            </option>
-        </select>
-    </label><br/>
+<h1 th:text="${readableitem.id} == '' ? 'Add Readable Item' : 'Edit Readable Item'"></h1>
+
+<!-- add -->
+<form th:if="${readableitem.id} == ''"
+      th:action="@{/readableitems}"
+      th:object="${readableitem}"
+      method="post">
+
+    <label>Id:</label><br/>
+    <input type="text" th:field="*{id}" /> <br/><br/>
+
+    <label>Publication Id:</label><br/>
+    <input type="text" th:field="*{publicationId}" required/><br/><br/>
+
+    <label>Barcode:</label><br/>
+    <input type="text" th:field="*{barcode}" required/><br/><br/>
+
+    <label>Status:</label><br/>
+    <select th:field="*{status}">
+        <option th:each="s : ${T(com.example.library.model.ReadableItemStatus).values()}"
+                th:value="${s}"
+                th:text="${s}">
+        </option>
+    </select>
+    <br/><br/>
+
     <button type="submit">Save</button>
-    <br/>
+</form>
+
+<!-- edit -->
+<form th:unless="${readableitem.id} == ''"
+      th:action="@{'/readableitems/' + ${readableitem.id} + '/edit'}"
+      th:object="${readableitem}"
+      method="post">
+
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Publication Id:</label><br/>
+    <input type="text" th:field="*{publicationId}" required/><br/><br/>
+
+    <label>Barcode:</label><br/>
+    <input type="text" th:field="*{barcode}" required/><br/><br/>
+
+    <label>Status:</label><br/>
+    <select th:field="*{status}">
+        <option th:each="s : ${T(com.example.library.model.ReadableItemStatus).values()}"
+                th:value="${s}"
+                th:text="${s}">
+        </option>
+    </select>
+    <br/><br/>
+
+    <button type="submit">Save</button>
 </form>
 
 <br/>
 <a href="/readableitems">Back</a>
+
 </body>
 </html>

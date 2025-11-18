@@ -19,10 +19,33 @@ public class AuthorController {
         this.authorService = authorService;
     }
 
+    /*
+    getAll si getById
+     */
     @GetMapping
     public String getAllAuthors(Model model) {
         model.addAttribute("authors", authorService.getAllAuthors());
         return "authors/index";
+    }
+
+    @GetMapping("/{id}")
+    public String getAuthorById(@PathVariable String id, Model model) {
+        Author author = authorService.getAuthorById(id);
+        if (author == null) {
+            return "redirect:/authors";
+        }
+
+        model.addAttribute("author", author);
+        return "authors/details";
+    }
+
+    /*
+    addAuthor
+     */
+    @PostMapping
+    public String addAuthor(@ModelAttribute Author author) {
+        authorService.addAuthor(author);
+        return "redirect:/authors";
     }
 
     @GetMapping("/new")
@@ -31,12 +54,31 @@ public class AuthorController {
         return "authors/form";
     }
 
-    @PostMapping
-    public String addAuthor(@ModelAttribute Author author) {
-        authorService.addAuthor(author);
+
+    /*
+    updateAuthor
+     */
+    @GetMapping("/{id}/edit")
+    public String showEditForm(@PathVariable String id, Model model) {
+        Author author = authorService.getAuthorById(id);
+        if (author == null) {
+            return "redirect:/authors";
+        }
+
+        model.addAttribute("author", author);
+        return "authors/form";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateAuthor(@PathVariable String id, @ModelAttribute Author author) {
+        authorService.updateAuthor(id, author);
         return "redirect:/authors";
     }
 
+
+    /*
+    deleteAuthor
+     */
     @PostMapping("/{id}/delete")
     public String deleteAuthor(@PathVariable String id) {
         authorService.removeAuthor(id);

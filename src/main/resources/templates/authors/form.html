@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Add Author</title></head>
+<head><title>Author Form</title></head>
 <body>
-<h1>Add Author</h1>
 
-<form action="#" th:action="@{/authors}" th:object="${author}" method="post">
-    <label>Id: <input type="text" th:field="*{id}" /></label><br/>
-    <br/>
-    <label>Name: <input type="text" th:field="*{name}" /></label><br/>
-    <br/>
-    <label>Birth Date: <input type="date" th:field="*{dateOfBirth}" /></label><br/>
-    <br/>
+<h1 th:text="${author.id} == '' ? 'Add Author' : 'Edit Author'"></h1>
+
+<!-- add -->
+<form th:if="${author.id} == ''"
+      th:action="@{/authors}"
+      th:object="${author}"
+      method="post">
+
+    <label>Id:</label><br/>
+    <input type="text" th:field="*{id}" /> <br/><br/>
+
+    <label>Name:</label><br/>
+    <input type="text" th:field="*{name}" required/><br/><br/>
+
+    <label>Birth Date:</label><br/>
+    <input type="date" th:field="*{dateOfBirth}" required/><br/><br/>
+
     <button type="submit">Save</button>
-    <br/>
+</form>
+
+
+<!-- edit -->
+<form th:unless="${author.id} == ''"
+      th:action="@{'/authors/' + ${author.id} + '/edit'}"
+      th:object="${author}"
+      method="post">
+
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Name:</label><br/>
+    <input type="text" th:field="*{name}" required/><br/><br/>
+
+    <label>Birth Date:</label><br/>
+    <input type="date" th:field="*{dateOfBirth}" required/><br/><br/>
+
+    <button type="submit">Save</button>
 </form>
 
 <br/>
 <a href="/authors">Back</a>
+
 </body>
 </html>

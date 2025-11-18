@@ -16,12 +16,30 @@ public class LibraryController {
         this.libraryService = libraryService;
     }
 
+    /*
+    getAll si getById
+     */
     @GetMapping
     public String getAllLibraries(Model model) {
         model.addAttribute("libraries", libraryService.getAllLibraries());
         return "libraries/index";
     }
 
+    @GetMapping("/{id}")
+    public String getLibraryById(@PathVariable String id, Model model) {
+        Library library = libraryService.getLibraryById(id);
+        if (library == null) {
+            return "redirect:/libraries";
+        }
+
+        model.addAttribute("library", library);
+        return "libraries/details";
+    }
+
+
+    /*
+    addLibrary
+     */
     @GetMapping("/new")
     public String showAddForm(Model model) {
         model.addAttribute("library", new Library("", "", ""));
@@ -34,6 +52,31 @@ public class LibraryController {
         return "redirect:/libraries";
     }
 
+
+    /*
+    updateLibrary
+     */
+    @GetMapping("/{id}/edit")
+    public String showEditForm(@PathVariable String id, Model model) {
+        Library library = libraryService.getLibraryById(id);
+        if (library == null) {
+            return "redirect:/libraries";
+        }
+
+        model.addAttribute("library", library);
+        return "libraries/form";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateLibrary(@PathVariable String id, @ModelAttribute Library updatedLibrary) {
+        libraryService.updateLibrary(id, updatedLibrary);
+        return "redirect:/libraries";
+    }
+
+
+    /*
+    deleteLibrary
+     */
     @PostMapping("/{id}/delete")
     public String deleteLibrary(@PathVariable String id) {
         libraryService.removeLibrary(id);

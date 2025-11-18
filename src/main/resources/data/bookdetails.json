@@ -1,42 +1,51 @@
-[
-  {
-    "id": "B1",
-    "title": "Poezii"
-  },
-  {
-    "id": "B2",
-    "title": "Amintiri din Copilarie"
-  },
-  {
-    "id": "B3",
-    "title": "Harry Potter and the Sorcerer's Stone"
-  },
-  {
-    "id": "B4",
-    "title": "Ion"
-  },
-  {
-    "id": "B5",
-    "title": "Patul lui Procust"
-  },
-  {
-    "id": "B6",
-    "title": "Mandrie si Prejudecata"
-  },
-  {
-    "id": "B7",
-    "title": "Cadavrul Viu"
-  },
-  {
-    "id": "B8",
-    "title": "Purple Hibiscus"
-  },
-  {
-    "id": "B9",
-    "title": "Metamorfoza"
-  },
-  {
-    "id": "B10",
-    "title": "The Handmaid's Tale"
-  }
-]
+[ {
+  "id" : "B1",
+  "title" : "Poezii",
+  "copies" : [ ],
+  "bookAuthors" : null
+}, {
+  "id" : "B2",
+  "title" : "Amintiri din Copilarie",
+  "copies" : [ ],
+  "bookAuthors" : null
+}, {
+  "id" : "B3",
+  "title" : "Harry Potter and the Sorcerer's Stone",
+  "copies" : [ ],
+  "bookAuthors" : null
+}, {
+  "id" : "B4",
+  "title" : "Ion",
+  "copies" : [ ],
+  "bookAuthors" : null
+}, {
+  "id" : "B5",
+  "title" : "Patul lui Procust",
+  "copies" : [ ],
+  "bookAuthors" : null
+}, {
+  "id" : "B6",
+  "title" : "Mandrie si Prejudecata",
+  "copies" : [ ],
+  "bookAuthors" : null
+}, {
+  "id" : "B7",
+  "title" : "Cadavrul Viu",
+  "copies" : [ ],
+  "bookAuthors" : null
+}, {
+  "id" : "B8",
+  "title" : "Purple Hibiscus",
+  "copies" : [ ],
+  "bookAuthors" : null
+}, {
+  "id" : "B9",
+  "title" : "Metamorfoza",
+  "copies" : [ ],
+  "bookAuthors" : null
+}, {
+  "id" : "B10",
+  "title" : "The Handmaid's Tale",
+  "copies" : [ ],
+  "bookAuthors" : null
+} ]

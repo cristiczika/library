@@ -17,15 +17,35 @@ public class ReadableItemController {
         this.readableItemService = readableItemService;
     }
 
+    /*
+    getAll si getById
+     */
     @GetMapping
     public String getAllReadableItems(Model model) {
         model.addAttribute("readableitems", readableItemService.getAllReadableItems());
         return "readableitems/index";
     }
 
+    @GetMapping("/{id}")
+    public String getReadableItemById(@PathVariable String id, Model model) {
+        ReadableItem readableItem = readableItemService.getReadableItemById(id);
+        if (readableItem == null) {
+            return "redirect:/readableitems";
+        }
+
+        model.addAttribute("readableitem", readableItem);
+        model.addAttribute("statuses", ReadableItemStatus.values());
+        return "readableitems/details";
+    }
+
+
+    /*
+    addReadableItem
+     */
     @GetMapping("/new")
     public String showAddForm(Model model) {
         model.addAttribute("readableitem", new ReadableItem("", "", "", ReadableItemStatus.AVAILABLE));
+        model.addAttribute("statuses", ReadableItemStatus.values());
         return "readableitems/form";
     }
 
@@ -35,6 +55,32 @@ public class ReadableItemController {
         return "redirect:/readableitems";
     }
 
+
+    /*
+    updateReadableItem
+     */
+    @GetMapping("/{id}/edit")
+    public String showEditForm(@PathVariable String id, Model model) {
+        ReadableItem readableItem = readableItemService.getReadableItemById(id);
+        if (readableItem == null) {
+            return "redirect:/readableitems";
+        }
+
+        model.addAttribute("readableitem", readableItem);
+        model.addAttribute("statuses", ReadableItemStatus.values());
+        return "readableitems/form";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateReadableItem(@PathVariable String id, @ModelAttribute ReadableItem updatedItem) {
+        readableItemService.updateReadableItem(id, updatedItem);
+        return "redirect:/readableitems";
+    }
+
+
+    /*
+    deleteReadableItem
+     */
     @PostMapping("/{id}/delete")
     public String deleteReadableItem(@PathVariable String id) {
         readableItemService.removeReadableItem(id);

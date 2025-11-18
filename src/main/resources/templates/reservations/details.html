@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Reservation Details</title></head>
+<body>
+
+<h1>Reservation Details</h1>
+
+<p><strong>ID:</strong> <span th:text="${reservation.id}"></span></p>
+<p><strong>Member Id:</strong> <span th:text="${reservation.memberId}"></span></p>
+<p><strong>Readable Item Id:</strong> <span th:text="${reservation.readableItemId}"></span></p>
+<p><strong>Date:</strong> <span th:text="${reservation.date}"></span></p>
+<p><strong>Status:</strong> <span th:text="${reservation.status}"></span></p>
+
+<br/>
+
+<a th:href="@{'/reservations/' + ${reservation.id} + '/edit'}">Edit</a>
+<br/><br/>
+<a href="/reservations">Back</a>
+
+</body>
+</html>

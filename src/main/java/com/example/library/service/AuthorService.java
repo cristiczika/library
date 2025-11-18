@@ -19,6 +19,11 @@ public class AuthorService {
         authorRepository.save(author);
     }
 
+    public void updateAuthor(String id, Author update) {
+        update.setId(id);
+        authorRepository.save(update);
+    }
+
     public void removeAuthor(String authorId) {
         Author author = authorRepository.findById(authorId);
         if (author != null) {

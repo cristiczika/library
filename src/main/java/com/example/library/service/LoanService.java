@@ -19,6 +19,11 @@ public class LoanService {
         loanRepository.save(loan);
     }
 
+    public void updateLoan(String id, Loan update) {
+        update.setId(id);
+        loanRepository.save(update);
+    }
+
     public void removeLoan(String loanId) {
         Loan loan = loanRepository.findById(loanId);
         if (loan != null) {

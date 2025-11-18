@@ -19,6 +19,11 @@ public class ReadableItemService {
         readableItemRepository.save(readableItem);
     }
 
+    public void updateReadableItem(String id, ReadableItem update) {
+        update.setId(id);
+        readableItemRepository.save(update);
+    }
+
     public void removeReadableItem(String readableItemId) {
         ReadableItem readableItem = readableItemRepository.findById(readableItemId);
         if (readableItem != null) {

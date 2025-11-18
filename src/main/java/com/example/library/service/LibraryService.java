@@ -19,6 +19,11 @@ public class LibraryService {
         libraryRepository.save(library);
     }
 
+    public void updateLibrary(String id, Library update) {
+        update.setId(id);
+        libraryRepository.save(update);
+    }
+
     public void removeLibrary(String libraryId) {
         Library library = libraryRepository.findById(libraryId);
         if (library != null) {

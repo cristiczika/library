@@ -19,6 +19,11 @@ public class ReservationService {
         reservationRepository.save(reservation);
     }
 
+    public void updateReservation(String id, Reservation update) {
+        update.setId(id);
+        reservationRepository.save(update);
+    }
+
     public void removeReservation(String reservationId) {
         Reservation reservation = reservationRepository.findById(reservationId);
         if (reservation != null) {

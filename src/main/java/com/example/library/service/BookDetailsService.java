@@ -19,6 +19,11 @@ public class BookDetailsService {
         bookDetailsRepository.save(bookDetails);
     }
 
+    public void updateBookDetails(String id, BookDetails update) {
+        update.setId(id);
+        bookDetailsRepository.save(update);
+    }
+
     public void removeBookDetails(String bookDetailsId) {
         BookDetails bookDetails = bookDetailsRepository.findById(bookDetailsId);
         if (bookDetails != null) {

@@ -19,6 +19,11 @@ public class MagazineDetailsService {
         magazineDetailsRepository.save(magazineDetails);
     }
 
+    public void updateMagazineDetails(String id, MagazineDetails update) {
+        update.setId(id);
+        magazineDetailsRepository.save(update);
+    }
+
     public void removeMagazineDetails(String magazineDetailsId) {
         MagazineDetails magazineDetails = magazineDetailsRepository.findById(magazineDetailsId);
         if (magazineDetails != null) {

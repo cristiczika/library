@@ -19,6 +19,11 @@ public class MemberService {
         memberRepository.save(member);
     }
 
+    public void updateMember(String id, Member update) {
+        update.setId(id);
+        memberRepository.save(update);
+    }
+
     public void removeMember(String memberId) {
         Member member = memberRepository.findById(memberId);
         if (member != null) {
